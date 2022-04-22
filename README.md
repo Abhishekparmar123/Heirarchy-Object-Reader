@@ -2,7 +2,7 @@
 
 ## This is my data for just example
 
-'''
+```
 var testObj = {
   bankId: 13,
   accounts: [
@@ -27,6 +27,6 @@ var testObj = {
     }
   ]
 };
-'''
+```
 
 where i have to just find out the average salary of all the accounts and subaccounts.

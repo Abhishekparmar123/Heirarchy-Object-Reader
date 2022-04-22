@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        Task Solution for Javascript Developer in Inkoop
+    </title>
+</head>
+
+<body style="text-align:center; margin-top: 100px;">
+    <h1 style="color: green">
+        Task Solution for Javascript Developer in Inkoop
+    </h1>
+    <p id="avg"></p>
+    <button id="startButton" onclick="totalsal()">
+		calculate
+	</button>
+    <!-- <p id="player1">Player 1 - Won : 0</p>
+    <p id="player2">Player 2 - Won : 0</p>
+    <p id="result"></p> -->
+
+
+    <script>
+        var total = 0;
+        var count = 0;
+        var average = document.getElementById("avg");
+        var testObj = {
+            bankId: 13,
+            accounts: [{
+                accountName: "abc",
+                currentBalance: {
+                    cash: 2000
+                },
+                subAccounts: []
+            }, {
+                accountName: "bcd",
+                currentBalance: {
+                    cash: 5000
+                },
+                subAccounts: [{
+                    accountName: "efg",
+                    currentBalance: {
+                        cash: 7000
+                    },
+                    subAccounts: [{
+                        accountName: "kge",
+                        currentBalance: {
+                            cash: 6000
+                        },
+                        subAccounts: []
+                    }]
+                }, {
+                    accountName: "der",
+                    currentBalance: {
+                        cash: 8000
+                    },
+                    subAccounts: []
+                }]
+            }]
+        };
+
+        function recursionFunction(data) {
+            console.log(data);
+            data.map((e) => {
+                total = total + e.currentBalance.cash;
+                count = count + 1;
+
+                console.log("length : " + e.subAccounts.length)
+                if (e.subAccounts.length > 0) {
+                    recursionFunction(e.subAccounts)
+                }
+            })
+        }
+
+
+        function totalsal() {
+            console.log("hello");
+            recursionFunction(testObj.accounts);
+            console.log("your total amount : " + total + "tag : " + count);
+            average.innerHTML = "Total : " + total + ", No. of account : " + count + " And average is : " + (total / count);
+        }
+    </script>
+</body>
+
+</html>
